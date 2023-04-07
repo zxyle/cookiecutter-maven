@@ -13,8 +13,19 @@ def remove_open_source_files():
     remove_files(file_names)
 
 
+def remove_build_tool(tool: str):
+    file_names = []
+    if tool == "maven":
+        file_names.extend(
+            ["build.gradle", "settings.gradle", "build.gradle.kts", "settings.gradle.kts", "gradlew", "gradlew.bat", ".github/workflows/gradle.yml"])
+    else:
+        file_names.extend(["pom.xml", "mvnw", "mvnw.bat", ".github/workflows/maven.yml"])
+
+    remove_files(file_names)
+
+
 def git_init():
-    cmds = [
+    commands = [
         'git init --initial-branch=master',
         'git config --local user.name "{{ cookiecutter.author_name }}"',
         'git config --local user.email "{{ cookiecutter.email }}"',
@@ -23,8 +34,8 @@ def git_init():
         'git checkout -b dev/{{ cookiecutter.version }}'
     ]
     try:
-        for cmd in cmds:
-            os.system(cmd)
+        for command in commands:
+            os.system(command)
     except:
         pass
 
@@ -33,6 +44,8 @@ def main():
     if "{{ cookiecutter.open_source_license }}" == "Not open source":
         remove_open_source_files()
 
+    tool = "{{ cookiecutter.build_tool }}"
+    remove_build_tool(tool)
     git_init()
 
 

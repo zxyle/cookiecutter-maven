@@ -1,11 +1,15 @@
-# cookiecutter-template
+# cookiecutter-maven
 
 ## Intro
-Create projects quickly
+Quickly create java projects
 
 ## Usage
-Click the "Use this template" button. 
 
+### Generate project
+```bash
+$ pip3 install cookiecutter
+$ cookiecutter https://github.com/zxyle/cookiecutter-maven.git
+```
 
 ## License
 MIT license

@@ -1,4 +1,4 @@
-# {{ cookiecutter.project_name }}
+# {{ cookiecutter.artifact }}
 _{{ cookiecutter.project_short_description }}_
 
 ## Intro
