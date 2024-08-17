@@ -17,7 +17,6 @@
         <argLine>-Dfile.encoding=UTF-8</argLine>
         <maven.compiler.source>{{ cookiecutter.javaVersion }}</maven.compiler.source>
         <maven.compiler.target>{{ cookiecutter.javaVersion }}</maven.compiler.target>
-        <maven.compiler.compilerVersion>{{ cookiecutter.javaVersion }}</maven.compiler.compilerVersion>
         <java.version>{{ cookiecutter.javaVersion }}</java.version>
     </properties>
 
@@ -25,7 +24,7 @@
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
-            <version>3.15.0</version>
+            <version>3.16.0</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
